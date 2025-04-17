@@ -1,0 +1,120 @@
+どうにかしたいコード
+
+#include <iostream>
+using namespace std;
+namespace
+{
+    constexpr int more=10;    
+}
+
+int main(void)
+{
+   
+   // 入力を受ける箱の作成
+   int a,b,c,d;
+   // 各種パターン
+   int AB,AC,AD;
+   int BA,BC,BD;
+   int CA,CB,CD;
+   int DA,DB,DC;
+   
+   int MaxA;
+   int MaxB;
+   
+   int num;
+   
+   cin>>a;
+   cin>>b;
+   cin>>c;
+   cin>>d;
+  
+  if(a > b && a > c &&　a > d　)
+  {
+      if(b > c && b > d)
+      {
+        MaxA=(a*more)+c;
+        MaxB=(b*more)+d;
+      }
+      
+      else if(c > d)
+      {
+        MaxA=(a*more)+b;
+        MaxB=(c*more)+d;
+      }
+      
+      else
+      {
+        MaxA=(a*more)+b;
+        MaxB=(d*more)+c;
+      }
+      
+  }
+  
+  else if(b>c&&b>d)
+  {
+      if(a>c&&a>d)
+      {
+        MaxA=(b*more)+c;
+        MaxB=(a*more)+d;
+      }
+      
+      else if(c>d)
+      {
+        MaxA=(b*more)+a;
+        MaxB=(c*more)+d;
+      }
+      
+      else
+      {
+        MaxA=(b*more)+a;
+        MaxB=(d*more)+c;
+      }
+  }
+  
+  else if(c>d)
+  {
+      if(a>b&&a>d)
+      {
+        MaxA=(c*more)+b;
+        MaxB=(a*more)+d;
+      }
+      
+      else if(b>d)
+      {
+        MaxA=(c*more)+a;
+        MaxB=(b*more)+d;
+      }
+      
+      else
+      {
+        MaxA=(c*more)+a;
+        MaxB=(d*more)+b;
+      }
+  }
+  
+  else
+  {
+      if(a>b&&a>c)
+      {
+          MaxA=(d*more)+b;
+          MaxB=(a*more)+c;
+      }
+      
+      else if(b>c)
+      {
+          MaxA=(d*more)+a;
+          MaxB=(b*more)+c;
+      }
+      
+      else
+      {
+          MaxA=(d*more)+a;
+          MaxB=(c*more)+b;
+      }
+  }
+   
+ num=MaxA+MaxB;
+ cout << num << endl;
+   
+    return 0;
+}
